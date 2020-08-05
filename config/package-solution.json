@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "react-redux-client-side-solution",
+    "id": "4d423edd-b26d-4cc9-ba08-e5fc2e30fb2c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "features": [
+      {
+        "title": "asset-deployment-webpart-client-side-solution",
+        "description": "asset-deployment-webpart-client-side-solution",
+        "id": "47201246-be5a-44a7-987d-182c97ee0b32",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": ["elements.xml"],
+          "upgradeActions": ["upgrade-actions-v1.xml"]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/react-redux.sppkg"
+  }
+}
