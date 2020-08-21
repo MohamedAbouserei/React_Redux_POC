@@ -1,0 +1,247 @@
+.validateMessage {
+    color: #fff;
+    font-size: 10px;
+    background: #e60000;
+    display: inline-block;
+    padding: 4px;
+    margin: 2px 0;
+    border-radius: 3px;
+}
+
+.buttonBlock {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dropDownBox {
+    color: #000;
+    font-size: 12px;
+    border: none;
+    span {
+        border-color: #eee;
+        &:hover {
+            border-color: #eee;
+        }
+    }
+}
+
+.labelItem {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #333;
+}
+
+.field {
+    color: #000;
+    label {
+        font-size: 12px;
+        font-weight: 500;
+        margin: 5px 0;
+        color: #333;
+        display: inline-block;
+        &.lblHight {
+            height: 20px !important;
+        }
+        span {
+            color: #e60000;
+            margin-left: 2px;
+            margin-right: 5px;
+        }
+    }
+    .pickerText {
+        border: 1px solid #eee;
+        input {
+            font-size: 12px;
+            font-weight: 500;
+            color: #333;
+        }
+    }
+}
+
+.disabledPickerStyle {
+    background: #f4f4f4;
+    padding: 4px;
+    div {
+        border: none;
+    }
+    input {
+        border: 1px solid #eee;
+        &:hover {
+            border: 1px solid #eee;
+        }
+    }
+}
+
+.peoplePickerStyle {
+    padding: 4px;
+    div {
+        border: none;
+    }
+    input {
+        border: 1px solid #eee;
+        &:hover {
+            border: 1px solid #eee;
+        }
+    }
+}
+
+.checkBox {
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 3px;
+    color: #333;
+    label {
+        span {
+            font-size: 11px;
+            color: #333;
+            position: relative;
+            top: -2px;
+            span {
+                color: #e60000;
+            }
+        }
+    }
+}
+
+.fieldGroupBox {
+    border: 1px solid #eee;
+    &:hover {
+        border: 1px solid #eee;
+    }
+    input {
+        font-size: 12px;
+        font-weight: 500;
+        color: #333;
+    }
+}
+
+.error {
+    color: #e60000;
+}
+
+.disabledPicker {
+    button {
+        display: none;
+    }
+}
+
+.errorMsg {
+    color: #e60000;
+}
+
+.error {
+    color: #e60000;
+}
+
+.tooltipBox {
+    color: #00bcd4;
+    position: relative;
+    top: 2px;
+    left: 3px;
+    font-size: 13px;
+}
+
+.notficationMessage {
+    position: fixed;
+    left: 0;
+    top: 200px;
+    z-index: 99999999;
+    background: #00bcd4;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 0 0 10px #cdd1cd;
+    border: none !important;
+    min-width: 300px !important;
+    transition: all ease 500ms;
+    strong {
+        display: block;
+        font-size: 20px;
+        color: #fff;
+        padding: 8px;
+    }
+    p {
+        color: #fff;
+        display: block;
+        margin: 0;
+        padding: 10px 10px;
+        font-size: 13px;
+    }
+    button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 30px;
+        height: 30px;
+        color: #fff;
+    }
+}
+
+.notficationMessageSuccess {
+    background: #4caf50 !important;
+}
+
+.notficationMessageError {
+    background: #e60000 !important;
+}
+
+.MessageAdditional {
+    position: relative;
+    background: #f7f7f7;
+    padding: 10px;
+    margin: 0 -20px;
+    margin-bottom: 20px;
+    min-height: 83px;
+    h4 {
+        margin: 0;
+        padding: 5px;
+        font-weight: normal;
+        color: #333;
+    }
+    a {
+        display: inline-block;
+        border-bottom: 1px solid;
+        font-weight: bold;
+        background: #e60000;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 5px;
+        margin: 5px;
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+    span {
+        display: inline-block;
+        background: #00bcd4;
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 5px;
+        margin: 5px;
+        color: #fff;
+        &:hover {
+            background: #e60000;
+        }
+    }
+}
+
+.validateMsg {
+    padding: 4px;
+    margin: 0;
+    p {
+        color: #e60000;
+        font-size: 11px;
+        line-height: normal;
+        padding-left: 17px;
+        position: relative;
+        i {
+            color: #e60000;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            padding: 0;
+        }
+    }
+}

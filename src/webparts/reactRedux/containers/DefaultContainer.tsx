@@ -2,15 +2,14 @@ import * as React from "react";
 import { connect } from "react-redux";
 
 import { IState } from "../store";
-import { ReactRedux, ReactiveInfo } from "../components";
+import { SiteURLPart } from "../components";
 const mapStateToProps = (state: IState) => ({
-  description: state.webpart.properties.description,
+  SiteURLPart: state.webpart.properties.SiteURL,
 });
 
-const DefaultContainer = ({ description, reactive }) => (
+const DefaultContainer = ({ SiteURL }) => (
   <div>
-    <ReactRedux description={description} />
-    <ReactiveInfo reactive={reactive} />
+    <SiteURLPart SiteURL={SiteURL} />
   </div>
 );
 

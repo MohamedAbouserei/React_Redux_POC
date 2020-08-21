@@ -1,8 +1,10 @@
 import { IReactReduxProps } from "../components/IReactReduxProps";
+
+import { ISiteURLProps } from "../components/SiteURLPart";
 import { assign } from "lodash";
 
 export interface IWebpartState {
-  properties: IReactReduxProps;
+  properties: ISiteURLProps;
 }
 
 export const UPDATE_PROPERTY = "webpart/UPDATE_PROPERTY";
@@ -15,19 +17,19 @@ export interface IUpdatePropertyAction {
 }
 export interface IApplyPropertiesAction {
   type: "webpart/APPLY_PROPERTIES"; // TODO is there a way to use the const?
-  properties: IReactReduxProps;
+  properties: ISiteURLProps;
 }
 export type IWebpartAction = IUpdatePropertyAction | IApplyPropertiesAction;
 
 export const initialState: IWebpartState = {
-  properties: { description: "" },
+  properties: { SiteURL: "" },
 };
 
 export default (state = initialState, action: IWebpartAction) => {
   switch (action.type) {
     case "webpart/UPDATE_PROPERTY":
       return assign({}, state, {
-        properties: assign({}, state.properties, {
+        state: assign({}, state.properties, {
           [action.propertyName]: action.value,
         }),
       });
@@ -36,6 +38,7 @@ export default (state = initialState, action: IWebpartAction) => {
         properties: action.properties,
       });
     default:
+      //console.log(state);
       return state;
   }
 };
@@ -44,6 +47,6 @@ export function updateProperty(propertyDescribtion: string, value: any) {
   return { type: UPDATE_PROPERTY, propertyDescribtion, value };
 }
 
-export function applyProperties(properties: IReactReduxProps) {
+export function applyProperties(properties: ISiteURLProps) {
   return { type: APPLY_PROPERTIES, properties };
 }

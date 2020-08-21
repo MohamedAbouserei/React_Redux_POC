@@ -11,8 +11,8 @@ import {
 } from "@microsoft/sp-webpart-base";
 
 import * as strings from "ReactReduxWebPartStrings";
-import ReactRedux from "./components/ReactRedux";
-import { IReactReduxProps } from "./components/IReactReduxProps";
+// import ReactRedux from "./components/ReactRedux";
+import { ISiteURLProps } from "./components/SiteURLPart";
 import { Store } from "redux";
 import { Provider } from "react-redux";
 import { createStore, IState } from "./store";
@@ -20,7 +20,7 @@ import DefaultContainer from "./containers/DefaultContainer";
 import { applyProperties, updateProperty } from "./reducers/webpart";
 
 export default class ReactReduxWebPart extends BaseClientSideWebPart<
-  IReactReduxProps
+  ISiteURLProps
 > {
   private store: Store<IState>;
 
@@ -30,12 +30,6 @@ export default class ReactReduxWebPart extends BaseClientSideWebPart<
     this.store = createStore();
   }
   public render(): void {
-    // const element: React.ReactElement<IReactReduxProps> = React.createElement(
-    //   ReactRedux,
-    //   {
-    //     description: this.properties.description
-    //   }
-    // );
     const element = (
       <Provider store={this.store}>
         <DefaultContainer />
@@ -52,14 +46,12 @@ export default class ReactReduxWebPart extends BaseClientSideWebPart<
   protected get dataVersion(): Version {
     return Version.parse("1.0");
   }
-  protected get disableReactivePropertyChanges() {
-    return this.properties ? this.properties.disableReactive : false;
-  }
+  // protected get disableReactivePropertyChanges() {
+  //   return this.properties ? this.properties.disableReactive : false;
+  // }
 
   protected onPropertyChanged(propertyPath, oldValue, newValue) {
-    if (!this.disableReactivePropertyChanges) {
-      this.store.dispatch(updateProperty(propertyPath, newValue));
-    }
+    this.store.dispatch(updateProperty(propertyPath, newValue));
   }
 
   // protected onInit(): Promise<boolean> {
@@ -71,25 +63,26 @@ export default class ReactReduxWebPart extends BaseClientSideWebPart<
   protected onAfterPropertyPaneChangesApplied() {
     this.store.dispatch(applyProperties(this.properties));
   }
-  protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
-    return {
-      pages: [
-        {
-          header: {
-            description: strings.PropertyPaneDescription,
-          },
-          groups: [
-            {
-              groupName: strings.BasicGroupName,
-              groupFields: [
-                PropertyPaneTextField("description", {
-                  label: strings.DescriptionFieldLabel,
-                }),
-              ],
-            },
-          ],
-        },
-      ],
-    };
-  }
+
+  //   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
+  //     return {
+  //       pages: [
+  //         {
+  //           header: {
+  //             description: strings.PropertyPaneDescription,
+  //           },
+  //           groups: [
+  //             {
+  //               groupName: strings.BasicGroupName,
+  //               groupFields: [
+  //                 PropertyPaneTextField("description", {
+  //                   label: strings.DescriptionFieldLabel,
+  //                 }),
+  //               ],
+  //             },
+  //           ],
+  //         },
+  //       ],
+  //     };
+  //   }
 }
