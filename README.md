@@ -151,6 +151,15 @@ const DefaultContainer = ({ SiteURL }) => (
 
 export default connect(mapStateToProps)(DefaultContainer);
 ```
+## Inside Components
+* create files with the name of the parts or components 
 
+* create index.ts
+* include the parts inside it 
+```
+import SiteURLPart from "./SiteURLPart";
+
+export { SiteURLPart };
+```
 
 ### End
