@@ -129,6 +129,28 @@ export function applyProperties(properties: ISiteURLProps) {
   return { type: APPLY_PROPERTIES, properties };
 }
 ```
+## Inside Containers
+* create DefaultContainer.tsx
+* add the following code
+```
+import * as React from "react";
+import { connect } from "react-redux";
+
+import { IState } from "../store";
+import { SiteURLPart } from "../components"; //include all components of your webpart 
+//add all your props
+const mapStateToProps = (state: IState) => ({
+  SiteURLPart: state.webpart.properties.SiteURL,
+});
+
+const DefaultContainer = ({ SiteURL }) => (
+  <div>
+    <SiteURLPart SiteURL={SiteURL} />
+  </div>
+);
+
+export default connect(mapStateToProps)(DefaultContainer);
+```
 
 
 ### End
